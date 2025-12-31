@@ -1,0 +1,5 @@
+<?php
+
+use Cdoebler\LaravelUserSwitcher\Tests\TestCase;
+
+uses(TestCase::class)->in(__DIR__);

@@ -1,0 +1,19 @@
+# IDEs and Editors
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Dependencies
+/vendor/
+composer.lock
+
+# Test Coverage
+.phpunit.cache/
+.pest/
+build/
+coverage/
+
+# PHPStan
+# phpstan.neon

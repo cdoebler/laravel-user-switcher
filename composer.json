@@ -1,0 +1,63 @@
+{
+    "name": "cdoebler/laravel-user-switcher",
+    "description": "Laravel package for fast user switching based on the generic user switcher package.",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Christian Doebler",
+            "email": "mail@christian-doebler.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Cdoebler\\LaravelUserSwitcher\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "Cdoebler\\LaravelUserSwitcher\\Tests\\": "tests/"
+        }
+    },
+    "require": {
+        "php": "^8.2",
+        "cdoebler/php-generic-user-switcher": "^1.0",
+        "illuminate/auth": "^10.0 || ^11.0 || ^12.0",
+        "illuminate/database": "^10.0 || ^11.0 || ^12.0",
+        "illuminate/session": "^10.0 || ^11.0 || ^12.0",
+        "illuminate/support": "^10.0 || ^11.0 || ^12.0"
+    },
+    "require-dev": {
+        "driftingly/rector-laravel": "^2.1",
+        "larastan/larastan": "^3.0",
+        "orchestra/testbench": "^8.0 || ^9.0",
+        "pestphp/pest": "^2.0 || ^3.0",
+        "pestphp/pest-plugin-laravel": "^2.0 || ^3.0"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Cdoebler\\LaravelUserSwitcher\\Providers\\UserSwitcherServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true,
+        "allow-plugins": {
+            "pestphp/pest-plugin": true
+        }
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "scripts": {
+        "pest": "vendor/bin/pest",
+        "phpstan": "vendor/bin/phpstan analyse --memory-limit=256M",
+        "rector": "php -d memory_limit=-1 vendor/bin/rector process",
+        "rector-dry": "php -d memory_limit=-1 vendor/bin/rector process --dry-run",
+        "test": [
+            "@rector-dry",
+            "@phpstan",
+            "@pest"
+        ]
+    }
+}
