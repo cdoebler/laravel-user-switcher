@@ -47,7 +47,7 @@ USER_SWITCHER_ENABLED=true
 Publish the configuration file to `config/user-switcher.php` using the following command:
 
 ```bash
-php artisan vendor:publish --provider="Cdoebler\LaravelUserSwitcher\UserSwitcherServiceProvider" --tag="config"
+php artisan vendor:publish --provider="Cdoebler\LaravelUserSwitcher\Providers\UserSwitcherServiceProvider" --tag="config"
 ```
 
 ### Options
